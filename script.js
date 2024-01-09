@@ -8,11 +8,17 @@ function setGrid(container){
         let newDiv = document.createElement("div");
         newDiv.style.height=`calc(600px/${num})`;
         newDiv.style.width=`calc(600px/${num})`;
-        newDiv.style.backgroundColor = 'red';
+        newDiv.style.backgroundColor = 'black';
         container.append(newDiv);
     }
-    
 }
 
 setGrid(container)
 
+const clrdiv=document.querySelectorAll('.container div');
+
+clrdiv.forEach(div => {
+    div.addEventListener('mouseover',()=>{
+    div.style.backgroundColor='white';
+    });
+});
