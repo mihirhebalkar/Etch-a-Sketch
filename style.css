@@ -35,3 +35,14 @@
     margin:100px auto;
 }
 
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.buttons button{
+    height: 40px;
+    width: 100px;
+}
+
