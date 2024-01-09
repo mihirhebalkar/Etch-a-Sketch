@@ -11,6 +11,7 @@ function setGrid(container){
         newDiv.style.backgroundColor = 'red';
         container.append(newDiv);
     }
+    
 }
 
 setGrid(container)
