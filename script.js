@@ -23,14 +23,20 @@ function setGrid(container){
     hover('black');
 }
 
-function hover(color){
-    const clrdiv=document.querySelectorAll('.container div');
+function hover(color) {
+    const clrdiv = document.querySelectorAll('.container div');
     clrdiv.forEach(div => {
-    div.addEventListener('mouseover',()=>{
-    div.style.backgroundColor=color;
+        div.addEventListener('mouseover', () => {
+            if (color) {
+                div.style.backgroundColor = color;
+            } 
+            else {
+                div.style.backgroundColor = selectAnyColor();
+            }
+        });
     });
-});
 }
+
 const newgridBtn=document.querySelector('#new');
 newgridBtn.addEventListener('click',()=>{
     setGrid(container);
@@ -45,6 +51,21 @@ const penBtn=document.querySelector('#pen');
 penBtn.addEventListener('click',()=>{
     hover('black')
 })
+
+function selectAnyColor(){
+    const clrs=['violet','indigo','blue','green','yellow','orange','red','white'];
+    let rand=Math.floor(Math.random()*8);
+    return clrs[rand];
+}
+
+
+
+const rBtn=document.querySelector('#rainbow');
+
+rBtn.addEventListener('click',()=>{
+    hover();
+})
+
 
 
 setGrid(container);
